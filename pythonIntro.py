@@ -45,16 +45,33 @@ toUpper = lambda str: str.upper()
 # print(toUpper("string"))
 
 # return a function from a function
-def greeting_maker(salutation):
-    def greeting(name):
-        return f"{salutation} {name}"
+# def greeting_maker(salutation):
+#     def greeting(name):
+#         return f"{salutation} {name}"
 
-    return greeting
+#     return greeting
+
+# hello = greeting_maker("Hello")
+# hiya = greeting_maker("Hiya")
+# print(hello("Ethan"))
+# print(hiya("Ethan"))
 
 
-hello = greeting_maker("Hello")
-hiya = greeting_maker("Hiya")
+# def lunch(food):
+#     if food == "nothing":
+#         print(f"{food} is my favorite food")
+#     elif food == "something":
+#         print(f"i guess i should eat {food}")
+#     else:
+#         print(f"{food} is just okay")
 
 
-print(hello("Ethan"))
-print(hiya("Ethan"))
+# lunch("something")
+
+
+# def first_before_second(string, letter1, letter2):
+#     letter1_last_index = string.rindex(letter1)
+#     letter2_first_index = string.index(letter2)
+#     return letter1_last_index < letter2_first_index
+
+# print(first_before_second("a rabbit jumps joyfully", "a", "j"))
