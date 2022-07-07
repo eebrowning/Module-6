@@ -75,3 +75,22 @@ toUpper = lambda str: str.upper()
 #     return letter1_last_index < letter2_first_index
 
 # print(first_before_second("a rabbit jumps joyfully", "a", "j"))
+
+# python's "map"
+# list = ["jerry", "LaRrY", "gary"]
+# new_list = [l for l in list]
+# print(new_list)
+
+# new_list2 = []
+# for l in list:
+#     new_list2.append(l.title())
+# print(new_list2)
+
+# python's 'filter'
+# num_lst = [1, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+# # filter to nums divisible by 3:
+# new_lst = []
+# for l in num_lst:
+#     if l % 3 == 0:
+#         new_lst.append(l)
+# print(new_lst)
