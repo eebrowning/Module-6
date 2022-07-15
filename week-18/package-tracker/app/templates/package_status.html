@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Status</title>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Recipient</th>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Location</th>
+                <th>Sender</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for package in packages %}
+            <tr>
+                <td>
+                    <div>{{package['recipient']}}</div>
+                </td>
+                <td>
+                    <div>{{package['origin']}}</div>
+                </td>
+                <td>
+                    <div>{{package['destination']}}</div>
+                </td>
+                <td>
+                    <div>{{package['location']}}</div>
+                </td>
+                <td>
+                    <div>{{package['sender']}}</div>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</body>
+
+</html>

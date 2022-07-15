@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar This!</title>
+</head>
+
+<body>
+    <h1>Calendar Working</h1>
+    <form method="post" action="">
+        {{form.hidden_tag()}}
+        <label for="name">Name</label>
+        <div>{{form.name}}</div>
+        <label for="start_date">Start</label>
+        <div>{{form.start_datetime_date}} {{form.start_datetime_time}}</div>
+        <label for="start_date">End</label>
+        <div>{{form.end_datetime_date}} {{form.end_datetime_time}}
+            {% if form.end_datetime_date.errors %}
+            <ul class="errors">
+                {% for error in form.end_datetime_date.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <label for="description">Description</label>
+        <div>{{form.description}}</div>
+        <label for="private">Private?</label>
+        <div>{{form.private}}</div>
+        <div>{{form.submit}}</div>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Start</th>
+                <th>End</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+
+                <td>
+                    <div>{{row['name']}}</div>
+                </td>
+                <td>
+                    <div>{{row['start_datetime']}}</div>
+                </td>
+                <td>
+                    <div>{{row['end_datetime']}}</div>
+                </td>
+            </tr>
+
+            {% endfor %}
+            <!-- loop here to create rows -->
+            <!-- use strftime to format date objects -->
+            <!-- loop here to create rows -->
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>

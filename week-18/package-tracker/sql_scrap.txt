@@ -1,0 +1,21 @@
+CREATE USER package_tracker
+with CREATEDB PASSWORD 'password';
+
+CREATE DATABASE package_tracker_app WITH OWNER package_tracker;
+
+psql -U package_tracker -d package_tracker_app
+
+
+CREATE TABLE packages(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    recipient VARCHAR(20) NOT NULL,
+    origin VARCHAR(20) NOT NULL,
+    destination VARCHAR(20) NOT NULL,
+    location VARCHAR(20) NOT NULL
+);
+
+INSERT INTO packages(name,recipient,origin,destination,location)
+VALUES(
+    
+)

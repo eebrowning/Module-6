@@ -1,0 +1,13 @@
+class WithLogger:
+    def __enter__(self):
+        print("2. In __enter__")
+        return self
+
+    def __exit__(self, type, value, traceback):
+        print("4. In __exit__", type, value)
+        return True
+
+print("1. Before with")
+with WithLogger() as logger:
+    raise Exception("OMG!")
+print("5. After with")
