@@ -1,0 +1,10 @@
+<form method="post" action="/new_instrument">
+    <input type="hidden">
+    {{ form.csrf_token }}
+    </input>
+    {% for field in form %}
+    <div>
+        {{field.label}}{{field}}
+    </div>
+    {% endfor %}
+</form>

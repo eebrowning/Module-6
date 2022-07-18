@@ -1,0 +1,23 @@
+CREATE USER app_academy
+WITH CREATEDB PASSWORD 'password';
+
+CREATE DATABASE pyweb_test_db
+WITH OWNER app_academy;
+
+pipenv install pytest
+pipenv install pycodestyle
+pipenv install pylint
+pipenv install rope
+pipenv install flask
+
+pipenv install flask-sqlalchemy
+pipenv install alembic
+pipenv install flask-migrate
+pipenv install python-dotenv
+
+pipenv install psycopg2-binary
+pipenv install sqlalchemy
+pipenv install wtforms
+pipenv install flask-wtf
+
+pipenv shell

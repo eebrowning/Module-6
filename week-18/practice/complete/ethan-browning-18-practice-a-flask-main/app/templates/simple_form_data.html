@@ -1,0 +1,9 @@
+<div>
+    {% for simp in simpletons if simp.name.startswith("M") %}
+
+    <div>{{ simp.name }}</div>
+    <div>{{ simp.age }}</div>
+    <div>{{ simp.bio }}</div>
+
+    {% endfor %}
+</div>

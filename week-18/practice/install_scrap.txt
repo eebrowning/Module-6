@@ -1,0 +1,24 @@
+CREATE USER pyweb_practice_user
+with CREATEDB PASSWORD 'pyweb';
+
+CREATE DATABASE pyweb_practice_db
+WITH OWNER pyweb_practice_user;
+
+psql -U pyweb_practice_user -d pyweb_practice_db
+
+DATABASE_URL=postgresql://pyweb_practice_user:pyweb@localhost/pyweb_practice_db
+
+pipenv install pytest
+pipenv install pycodestyle
+pipenv install pylint
+pipenv install rope
+pipenv install flask
+pipenv install flask-sqlalchemy
+pipenv install alembic
+pipenv install flask-migrate
+pipenv install python-dotenv
+pipenv install psycopg2-binary
+pipenv install sqlalchemy
+pipenv install wtforms
+pipenv install flask-wtf
+pipenv shell

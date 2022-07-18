@@ -1,0 +1,20 @@
+{% extends "main_page.html" %}
+
+
+{% block content %}
+<form method="post" action="/simple-form">
+    {% if form.name.errors %}
+    <ul class="errors">
+        {% for error in form.errors %}
+        <li>{{error}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {{form.csrf_token}}
+    <p>{{form.name.label}}{{form.name}}</p>
+    <p>{{form.age.label}}{{form.age}}</p>
+    <p>{{form.bio.label}}{{form.bio}}</p>
+    <p>{{form.submit.label}}{{form.submit}}</p>
+
+</form>
+{% endblock %}
