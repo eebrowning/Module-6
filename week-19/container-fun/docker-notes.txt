@@ -1,0 +1,55 @@
+Phase 0:
+docker run -d -p 80:80 --name my_nginx nginx
+
+docker run -d -p 81:80 --name my_httpd httpd
+
+docker run -d -p 3306:3306 --name my_mysql mysql
+
+docker container stop my_mysql my_httpd my_nginx
+docker rm -f my_mysql my_httpd my_nginx
+
+Phase 1:
+docker container run -it <IMAGENAME> <ARG>
+    -> i, keeps session open
+    -> t, simulates a terminal
+    -> <ARG>, argument for container
+
+Enter the container:
+    docker container run -it --name web nginx bash
+
+Restart container:
+    docker container start web
+    Enter Bash:
+    docker container exec -it web bash
+
+
+Create 'ubuntu' container:
+    docker container run --name ubuntu -d -t ubuntu
+    Interact with 'ubuntu':
+    docker exec -i ubuntu bash
+
+While in bash:
+    apt-get update
+    apt-get install -y curl
+
+
+Phase 2:
+
+while :
+do
+    wget -qO- 'https://swapi.dev/api/people/?search=r2'
+    printf '\n'
+    sleep 5s
+done
+
+docker container run -d --name characters alpine
+docker exec -it characters bash
+
+
+Phase 3:
+docker network create --driver bridge my_bridge
+docker network ls
+
+(--net-alias	-> Add network-scoped alias for the container)
+
+docker container run --net-alias -d elasticsearch:2
